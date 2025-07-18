@@ -1,75 +1,62 @@
-# Nuxt Minimal Starter
+# Hacker News Nuxt App
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This project is a minimal Hacker News client built with **Nuxt 3**, **Vue 3** and **TypeScript**.  It fetches stories from the public Hacker News API and displays them using Vuetify components.  State management is handled with **Pinia** and Vite powers the development server.
 
-## Setup
+## Stack
 
-Make sure to install dependencies:
+- [Nuxt 3](https://nuxt.com) and Vite
+- TypeScript
+- [Pinia](https://pinia.vuejs.org/) for state management
+- [Vuetify](https://vuetifyjs.com/) for UI components
 
-```bash
-# npm
-npm install
+## Project Structure
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+```
+├─ app.vue             # Root application layout
+├─ components/         # Shared Vue components
+├─ composables/        # Reusable Composition API logic
+├─ pages/              # Route components rendered by Nuxt
+├─ plugins/            # Nuxt/Vue plugins (e.g. Vuetify setup)
+├─ public/             # Static assets served as-is
+├─ server/             # Server side code or configuration
+├─ nuxt.config.ts      # Nuxt configuration
+└─ tsconfig.json       # TypeScript configuration
 ```
 
-## Development Server
+## Quickstart
 
-Start the development server on `http://localhost:3000`:
+1. Install dependencies:
 
-```bash
-# npm
-npm run dev
+   ```bash
+   npm install
+   ```
 
-# pnpm
-pnpm dev
+2. Start a development server at `http://localhost:3000`:
 
-# yarn
-yarn dev
+   ```bash
+   npm run dev
+   ```
 
-# bun
-bun run dev
+3. Build for production:
+
+   ```bash
+   npm run build
+   ```
+
+4. Preview a production build locally:
+
+   ```bash
+   npm run preview
+   ```
+
+## Sample API Usage
+
+The application calls the official Hacker News REST API.  Example endpoints:
+
+```http
+GET https://hacker-news.firebaseio.com/v0/topstories.json
+GET https://hacker-news.firebaseio.com/v0/item/<id>.json
 ```
 
-## Production
+Results are displayed in the UI and clicking a story opens its details in a dialog.
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
