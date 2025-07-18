@@ -59,6 +59,7 @@ const toggleModal = (story: Story) => {
               by {{ story.by }}
             </v-card-subtitle>
           </v-card-item>
+          
         </v-card>
       </div>
       <v-dialog style="max-width: 1000px;" v-model="modalOpen">
