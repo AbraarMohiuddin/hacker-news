@@ -13,5 +13,11 @@ export default defineNuxtConfig({
     },
   },
 
+  runtimeConfig: {
+    public: {
+      unsplashAccessKey: process.env.UNSPLASH_ACCESS_KEY,
+    },
+  },
+
   compatibilityDate: '2025-04-19',
 })

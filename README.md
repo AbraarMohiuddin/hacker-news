@@ -62,3 +62,11 @@ Results are displayed in the UI and clicking a story opens its details in a dial
 
 Use the navigation bar to switch between Top, New, Job and Ask stories.
 
+## Image Search API
+
+Story dialogs display a related photo fetched from the free [Unsplash](https://unsplash.com) API.  Set an access key in an `.env` file before running the app:
+
+```bash
+UNSPLASH_ACCESS_KEY=your_access_key
+```
+

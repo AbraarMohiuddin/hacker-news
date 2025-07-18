@@ -70,6 +70,12 @@ const toggleModal = (story: Story) => {
       </div>
       <v-dialog style="max-width: 1000px;" v-model="modalOpen">
         <v-card style="align-items: center;">
+          <v-img
+            v-if="selectedStory?.imageUrl"
+            :src="selectedStory.imageUrl"
+            aspect-ratio="16/9"
+            class="mb-2"
+          />
           <v-card-title>
             <a :href="selectedStory?.url" target="_blank"> {{ selectedStory?.title }} </a>
           </v-card-title>
