@@ -62,3 +62,12 @@ Results are displayed in the UI and clicking a story opens its details in a dial
 
 Use the navigation bar to switch between Top, New, Job and Ask stories.
 
+## Running Tests
+
+Unit tests are written with [Vitest](https://vitest.dev/).  Execute all tests with:
+
+```bash
+npm test
+```
+
+
