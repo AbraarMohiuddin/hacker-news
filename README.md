@@ -60,3 +60,5 @@ GET https://hacker-news.firebaseio.com/v0/item/<id>.json
 
 Results are displayed in the UI and clicking a story opens its details in a dialog.
 
+Use the navigation bar to switch between Top, New, Job and Ask stories.
+
