@@ -9,3 +9,9 @@ import Navbar from '~/components/navbar.vue'
   </v-app>
 </template>
 
+<style>
+.v-dialog .v-card {
+  background-color: red;
+}
+</style>
+
