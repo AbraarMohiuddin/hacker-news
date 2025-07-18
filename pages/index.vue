@@ -8,15 +8,21 @@ const route = useRoute();
 const stories = ref<Story[]>([])
 const loading = ref(true)
 
+const currentType = computed(() => (route.query.type as string) || 'topstories');
+const titleMap: Record<string, string> = {
+  topstories: 'Top Stories',
+  newstories: 'New Stories',
+  jobstories: 'Job Stories',
+  askstories: 'Ask Stories'
+};
+const headerTitle = computed(() => titleMap[currentType.value] || 'Stories');
+
 const modalOpen = ref(false);
 const selectedStory = ref<Story | null>();
 
 watchEffect(async () => {
   loading.value = true;
-  const type = route.query.type || "topstories";
-
-  const result = await useStories(type);
-
+  const result = await useStories(currentType.value as any);
   stories.value = result.stories.value;
   loading.value = result.loading.value;
 })
@@ -31,7 +37,7 @@ const toggleModal = (story: Story) => {
 
 <template>
   <v-container class="py-6 mt-12">
-    <h2 class="text-h5 mb-4">Top Stories</h2>
+    <h2 class="text-h5 mb-4">{{ headerTitle }}</h2>
 
     <div v-if="loading">
       <v-skeleton-loader 
